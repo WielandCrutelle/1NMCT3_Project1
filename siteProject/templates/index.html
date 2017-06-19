@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>WiWeather</title>
+    <link rel="stylesheet" href="{{ url_for('.static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('.static', filename='css/bootstrap.css') }}">
+    <script src="{{ url_for('.static', filename='js/jquery.js') }}"></script>
+</head>
+<body>
+<div class="body">
+<nav>
+    <ul>
+        <li class="active"><a href="{{ url_for('home') }}">Home</a></li>
+        <li><a href="{{ url_for('druk') }}">Luchtdruk</a></li>
+        <li><a href="{{ url_for('temp') }}">Temperatuur</a></li>
+        <li><a href="{{ url_for('vocht') }}">Luchtvochtigheid</a></li>
+    </ul>
+</nav>
+
+<!--  CONTENT  -->
+
+<div class="blokken">
+    <a class="blok" href="{{ url_for('druk') }}">
+        <div class="blok">
+            <img style='height: 100%; width: 100%; object-fit: contain' src="{{ url_for('.static', filename='img/druk.png') }}" alt="barrometer">
+        </div>
+    </a>
+    <a class="blok" href="{{ url_for('temp') }}">
+    <div class="blok">
+        <img style='height: 100%; width: 100%; object-fit: contain' src="{{ url_for('.static', filename='img/temp.png') }}" alt="themometer">
+    </div>
+    </a>
+    <a class="blok" href="{{ url_for('vocht') }}">
+    <div class="blok">
+       <img style='height: 100%; width: 100%; object-fit: contain' src="{{ url_for('.static', filename='img/vocht.png') }}" alt="vochtigheidsmeter">
+    </div>
+    </a>
+</div>
+
+
+
+</body>
+</html>
