@@ -5,15 +5,15 @@ class DbClass:
         self.__dsn = {
             "host": "localhost",
             "user": "root",
-            "passwd": "P@ssw0rd",
-            "db": "test"
+            "passwd": "root",
+            "db": "project1"
         }
 
         self.__connection = connector.connect(**self.__dsn)
         self.__cursor = self.__connection.cursor()
 
     def gettemp(self):
-        sqlQuery = "SELECT avg(Data) FROM test.meting where SensorID = 1 group by date(DatumTijd)"
+        sqlQuery = "SELECT avg(Data) FROM project1.meting where SensorID = 1 group by date(DatumTijd)"
 
         self.__cursor.execute(sqlQuery)
         result = self.__cursor.fetchall()
@@ -21,7 +21,7 @@ class DbClass:
         return result
 
     def gettempdate(self):
-        sqlQuery = "SELECT DatumTijd, Data FROM test.meting where SensorID = 1"
+        sqlQuery = "SELECT DatumTijd, Data FROM project1.meting where SensorID = 1"
 
         self.__cursor.execute(sqlQuery)
         result = self.__cursor.fetchall()
@@ -29,7 +29,7 @@ class DbClass:
         return result
 
     def getdruk(self):
-        sqlQuery = "SELECT avg(Data) FROM test.meting where SensorID = 2 GROUP by date(DatumTijd)"
+        sqlQuery = "SELECT avg(Data) FROM project1.meting where SensorID = 2 GROUP by date(DatumTijd)"
 
         self.__cursor.execute(sqlQuery)
         result = self.__cursor.fetchall()
@@ -37,7 +37,7 @@ class DbClass:
         return result
 
     def getdrukdate(self):
-        sqlQuery = "SELECT DatumTijd, Data FROM test.meting where SensorID = 2"
+        sqlQuery = "SELECT DatumTijd, Data FROM project1.meting where SensorID = 2"
 
         self.__cursor.execute(sqlQuery)
         result = self.__cursor.fetchall()
@@ -45,7 +45,7 @@ class DbClass:
         return result
 
     def getvocht(self):
-        sqlQuery = "SELECT avg(Data) FROM test.meting where SensorID = 3 GROUP by date(DatumTijd)"
+        sqlQuery = "SELECT avg(Data) FROM project1.meting where SensorID = 3 GROUP by date(DatumTijd)"
 
         self.__cursor.execute(sqlQuery)
         result = self.__cursor.fetchall()
@@ -53,7 +53,7 @@ class DbClass:
         return result
 
     def getvochtdate(self):
-        sqlQuery = "SELECT DatumTijd, Data FROM test.meting where SensorID = 3"
+        sqlQuery = "SELECT DatumTijd, Data FROM project1.meting where SensorID = 3"
 
         self.__cursor.execute(sqlQuery)
         result = self.__cursor.fetchall()
